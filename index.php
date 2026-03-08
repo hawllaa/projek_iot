@@ -8,16 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- Variabel Warna Baru yang Senada --- */
         :root {
-            --primary-color: #1c3144; /* Deep Navy Blue untuk Header */
-            --bg-color: #f5f7fa; /* Light Gray Blue untuk background */
+            --primary-color: #1c3144; 
+            --bg-color: #f5f7fa; 
             --card-bg: #ffffff;
             --text-primary: #1a1a1a;
             --text-secondary: #5a5a5a;
             --border-color: #e0e0e0;
             
-            /* Warna Status yang Lebih Muted */
             --status-aman-bg: #d0f5e1;
             --status-aman-text: #1e8449;
             --status-waspada-bg: #fff2cc; 
@@ -26,7 +24,6 @@
             --status-bahaya-text: #b91c1c;
         }
 
-        /* --- Penggunaan Font Poppins --- */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--bg-color);
@@ -38,7 +35,7 @@
             min-height: 100vh;
         }
 
-        /* Container Utama */
+
         .mobile-container {
             width: 100%;
             max-width: 420px; 
@@ -49,7 +46,6 @@
             flex-direction: column;
         }
 
-        /* Header */
         .header {
             background-color: var(--primary-color);
             color: white;
@@ -63,13 +59,11 @@
             font-size: 1.25rem;
         }
 
-        /* Konten Utama */
         .content {
             padding: 20px;
             flex-grow: 1;
         }
 
-        /* Kartu Status */
         .status-card {
             border-radius: 12px;
             padding: 24px;
@@ -94,12 +88,11 @@
             letter-spacing: 1px;
         }
 
-        /* Kelas untuk mengubah warna status */
         .status-aman { background-color: var(--status-aman-bg); color: var(--status-aman-text); border: 1px solid var(--status-aman-text); }
         .status-waspada { background-color: var(--status-waspada-bg); color: var(--status-waspada-text); border: 1px solid var(--status-waspada-text); }
         .status-bahaya { background-color: var(--status-bahaya-bg); color: var(--status-bahaya-text); border: 1px solid var(--status-bahaya-text); }
 
-        /* Kartu Data Sensor */
+
         .data-card {
             background-color: #f9f9f9;
             border: 1px solid var(--border-color);
@@ -129,7 +122,6 @@
             color: var(--text-secondary); 
         }
 
-        /* Kartu Info Detail */
         .info-card {
             background-color: #f9f9f9;
             border: 1px solid var(--border-color);
@@ -211,9 +203,6 @@
     </div>
 
     <script>
-        // --- SCRIPT JAVASCRIPT (SAMA SEPERTI SEBELUMNYA) ---
-        // Anda harus menyalin kembali fungsi updateData() dan fetchData() 
-        // beserta variabel-variabelnya dari jawaban sebelumnya ke sini.
 
         const statusCard = document.getElementById('status-card');
         const statusText = document.getElementById('status-text');
@@ -245,15 +234,13 @@
 
         async function fetchData() {
             try {
-                // Panggil file data.php (Pastikan data.php sudah ada dan berjalan)
                 const response = await fetch('data.php');
                 if (!response.ok) {
                     throw new Error('Gagal mengambil data dari server');
                 }
                 
                 const data = await response.json();
-                
-                // Panggil fungsi updateData dengan data baru dari server
+            
                 updateData(data.status, data.value, data.timestamp, data.location);
 
             } catch (error) {
@@ -268,4 +255,5 @@
         fetchData();
     </script>
 </body>
+
 </html>
